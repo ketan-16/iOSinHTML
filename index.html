@@ -16,6 +16,7 @@
             padding: 0;
             min-height: 100vh;
             min-width: 100vw;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 
         }
 
@@ -27,20 +28,11 @@
             background-position: center;
         }
 
-        .dock {
-            height: 11.69vh;
-            width: 96vw;
-            border-radius: 8vw;
-            position: absolute;
-            bottom: 2vw;
-            left: 2vw;
-            background-color: rgba(255, 255, 255, 0.5);
-        }
+
 
         .navbar {
             padding: 2.1vh 5vw;
             color: white;
-            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
             /* font-family: 'Oxygen', sans-serif; */
             font-weight: 700;
             display: flex;
@@ -69,6 +61,61 @@
             color: #8e8e92;
 
         }
+
+        .app-grid {
+            height: 68.86vh;
+            width: 96vw;
+            display: inline-grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            grid-template-rows: repeat(6, 1fr);
+            padding: 2vw;
+
+        }
+
+        .app-grid .app {
+            display: block;
+            text-align: center;
+            padding: 1vh 0px;
+        }
+
+        .app-grid .app img {
+            height: 7.8vh;
+            width: 7.8vh;
+        }
+
+        .app-grid .app span {
+            display: block;
+            font-size: small;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(80, 80, 80, 0.5);
+        }
+
+        .dock {
+            height: 11.69vh;
+            width: 92vw;
+            border-radius: 8vw;
+            position: absolute;
+            bottom: 2vw;
+            left: 2vw;
+            background-color: rgba(255, 255, 255, 0.5);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 2vw;
+
+        }
+
+        .dock .app {
+            display: block;
+            text-align: center;
+            padding: 1vh 0px;
+        }
+
+        .dock .app img {
+            height: 7.8vh;
+            width: 7.8vh;
+        }
     </style>
 </head>
 
@@ -81,7 +128,54 @@
             <div class="nav-right"><span><img src="images/icons/wifi.png" alt=""></span><span><img
                         src="images/icons/battery.png" alt=""></span></div>
         </div>
-        <div class="dock"></div>
+
+        <div class="app-grid">
+            <div class="app"><img src="images/icons/app-store-128x128-2365235.png"
+                    alt="app-store-128x128-2365235"><span>App Store</span></div>
+            <div class="app"><img src="images/icons/apple-music-128x128-2365226.png"
+                    alt="app-store-128x128-2365235"><span>Music</span></div>
+            <div class="app"><img src="images/icons/books-128x128-2365234.png" alt="app-store-128x128-2365235"><span>App
+                    Books</span></div>
+            <div class="app"><img src="images/icons/calculator-128x128-1575939.png"
+                    alt="app-store-128x128-2365235"><span>Calculator</span></div>
+            <div class="app"><img src="images/icons/calendar-128x128-2365233.png"
+                    alt="app-store-128x128-2365235"><span>Calendar</span></div>
+            <div class="app"><img src="images/icons/camera-128x128-2365232.png"
+                    alt="app-store-128x128-2365235"><span>Camera</span></div>
+            <div class="app"><img src="images/icons/clock-128x128-2365231.png" alt="app-store-128x128-2365235"><span>App
+                    Clock</span></div>
+
+            <div class="app"><img src="images/icons/facetime-128x128-1575950.png"
+                    alt="app-store-128x128-2365235"><span>Facetime</span></div>
+            <div class="app"><img src="images/icons/files-128x128-2365229.png" alt="app-store-128x128-2365235"><span>App
+                    Files</span></div>
+            <div class="app"><img src="images/icons/find-my-128x128-1575949.png"
+                    alt="app-store-128x128-2365235"><span>Find My</span></div>
+            <div class="app"><img src="images/icons/health-128x128-2365228.png"
+                    alt="app-store-128x128-2365235"><span>Health</span></div>
+            <div class="app"><img src="images/icons/home-128x128-2365227.png" alt="app-store-128x128-2365235"><span>App
+                    Home</span></div>
+            <div class="app"><img src="images/icons/mail-128x128-2365225.png"
+                    alt="app-store-128x128-2365235"><span>Mail</span></div>
+            <div class="app"><img src="images/icons/news-128x128-2365224.png"
+                    alt="app-store-128x128-2365235"><span>News</span></div>
+            <div class="app"><img src="images/icons/notes-128x128-2365245.png"
+                    alt="app-store-128x128-2365235"><span>Notes</span></div>
+            <div class="app"><img src="images/icons/podcasts-128x128-2365243.png"
+                    alt="app-store-128x128-2365235"><span>Podcasts</span></div>
+            <div class="app"><img src="images/icons/reminders-128x128-2365242.png"
+                    alt="app-store-128x128-2365235"><span>Reminders</span></div>
+
+            <div class="app"><img src="images/icons/settings-128x128-2365240.png"
+                    alt="app-store-128x128-2365235"><span>Setting</span></div>
+        </div>
+        <div class="dock">
+            <div class="app"><img src="images/icons/contacts-128x128-2365230.png" alt="app-store-128x128-2365235"></div>
+            <div class="app"><img src="images/icons/ios-message-128x128-1575946.png" alt="app-store-128x128-2365235">
+            </div>
+            <div class="app"><img src="images/icons/photos-128x128-2365244.png" alt="app-store-128x128-2365235"></div>
+            <div class="app"><img src="images/icons/safari-128x128-2365241.png" alt="app-store-128x128-2365235"></div>
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
         integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
