@@ -8,6 +8,8 @@
     <title>Document</title>
     <link rel="manifest" href="manifest.webmanifest">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+
         html,
         body {
             margin: 0;
@@ -34,13 +36,68 @@
             left: 2vw;
             background-color: rgba(255, 255, 255, 0.5);
         }
+
+        .navbar {
+            padding: 2.1vh 5vw;
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            /* font-family: 'Oxygen', sans-serif; */
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navbar .nav-left {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .navbar .nav-left span {
+            font-size: 1em;
+        }
+
+        .navbar .nav-right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar .nav-right img {
+            height: 1em;
+            padding: 0.2em;
+            color: #8e8e92;
+
+        }
     </style>
 </head>
 
 <body>
     <div class="home">
+        <div class="navbar">
+            <div class="nav-left"><span id="time"></span></div>
+            <div class="empty"><span></span></div>
+            <div class="empty"><span></span></div>
+            <div class="nav-right"><span><img src="images/icons/wifi.png" alt=""></span><span><img
+                        src="images/icons/battery.png" alt=""></span></div>
+        </div>
         <div class="dock"></div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script>
+        function updateTime() {
+            var time = new Date();
+            document.getElementById('time').innerHTML = time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+        }
+
+        updateTime();
+        $(document).ready(function () {
+            time = setInterval(updateTime, 60000);
+            console.log(true)
+        })
+
+    </script>
 </body>
 
 </html>
