@@ -8,7 +8,12 @@
     <title>Document</title>
     <link rel="manifest" href="manifest.webmanifest">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+        @media (max-height: 799px) {
+            .apps {
+                height: 66vh !important;
+                grid-template-columns: repeat(5, 1fr) !important;
+            }
+        }
 
         html,
         body {
@@ -17,7 +22,6 @@
             min-height: 100vh;
             min-width: 100vw;
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-
         }
 
         .home {
@@ -28,10 +32,8 @@
             background-position: center;
         }
 
-
-
         .navbar {
-            padding: 2.1vh 5vw;
+            padding: 1.5vh 5vw;
             color: white;
             /* font-family: 'Oxygen', sans-serif; */
             font-weight: 700;
@@ -59,11 +61,27 @@
             height: 1em;
             padding: 0.2em;
             color: #8e8e92;
+        }
 
+        .apps {
+            height: 72.86vh;
+            display: grid;
+            overflow-x: scroll;
+            grid-auto-flow: column;
+            grid-template-columns: repeat(6, 1fr);
+            overflow-y: auto;
+            overscroll-behavior-x: contain;
+            scroll-snap-type: x mandatory;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .apps::-webkit-scrollbar {
+            display: none;
         }
 
         .app-grid {
-            height: 68.86vh;
+            height: 72.86vh;
             width: 96vw;
             display: inline-grid;
             grid-template-columns: repeat(4, 1fr);
@@ -71,7 +89,6 @@
             grid-template-rows: repeat(6, 1fr);
             padding: 2vw;
             scroll-snap-align: center;
-
         }
 
         .app-grid .app {
@@ -104,7 +121,6 @@
             justify-content: space-around;
             align-items: center;
             padding: 0 2vw;
-
         }
 
         .dock .app {
@@ -118,21 +134,19 @@
             width: 7.8vh;
         }
 
-        .apps {
-            height: 68.86vh;
-            display: grid;
-            overflow-x: scroll;
-            grid-auto-flow: column;
-            grid-template-columns: repeat(6, 1fr);
-            overflow-y: auto;
-            overscroll-behavior-x: contain;
-            scroll-snap-type: x mandatory;
+        .noselect {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
     </style>
 </head>
 
 <body>
-    <div class="home">
+    <div class="home noselect">
         <div class="navbar">
             <div class="nav-left"><span id="time"></span></div>
             <div class="empty"><span></span></div>
@@ -142,101 +156,42 @@
         </div>
         <div class="apps">
             <div class="app-grid">
-                <div class="app"><img src="images/icons/app-store-128x128-2365235.png"
-                        alt="app-store-128x128-2365235"><span>App Store</span></div>
-                <div class="app"><img src="images/icons/apple-music-128x128-2365226.png"
-                        alt="app-store-128x128-2365235"><span>Music</span></div>
-                <div class="app"><img src="images/icons/books-128x128-2365234.png"
-                        alt="app-store-128x128-2365235"><span>App
-                        Books</span></div>
-                <div class="app"><img src="images/icons/calculator-128x128-1575939.png"
-                        alt="app-store-128x128-2365235"><span>Calculator</span></div>
-                <div class="app"><img src="images/icons/calendar-128x128-2365233.png"
-                        alt="app-store-128x128-2365235"><span>Calendar</span></div>
-                <div class="app"><img src="images/icons/camera-128x128-2365232.png"
-                        alt="app-store-128x128-2365235"><span>Camera</span></div>
-                <div class="app"><img src="images/icons/clock-128x128-2365231.png"
-                        alt="app-store-128x128-2365235"><span>App
-                        Clock</span></div>
-
-                <div class="app"><img src="images/icons/facetime-128x128-1575950.png"
-                        alt="app-store-128x128-2365235"><span>Facetime</span></div>
-                <div class="app"><img src="images/icons/files-128x128-2365229.png"
-                        alt="app-store-128x128-2365235"><span>App
-                        Files</span></div>
-                <div class="app"><img src="images/icons/find-my-128x128-1575949.png"
-                        alt="app-store-128x128-2365235"><span>Find My</span></div>
-                <div class="app"><img src="images/icons/health-128x128-2365228.png"
-                        alt="app-store-128x128-2365235"><span>Health</span></div>
-                <div class="app"><img src="images/icons/home-128x128-2365227.png"
-                        alt="app-store-128x128-2365235"><span>App
-                        Home</span></div>
-                <div class="app"><img src="images/icons/mail-128x128-2365225.png"
-                        alt="app-store-128x128-2365235"><span>Mail</span></div>
-                <div class="app"><img src="images/icons/news-128x128-2365224.png"
-                        alt="app-store-128x128-2365235"><span>News</span></div>
-                <div class="app"><img src="images/icons/notes-128x128-2365245.png"
-                        alt="app-store-128x128-2365235"><span>Notes</span></div>
-                <div class="app"><img src="images/icons/podcasts-128x128-2365243.png"
-                        alt="app-store-128x128-2365235"><span>Podcasts</span></div>
-                <div class="app"><img src="images/icons/reminders-128x128-2365242.png"
-                        alt="app-store-128x128-2365235"><span>Reminders</span></div>
-
-                <div class="app"><img src="images/icons/settings-128x128-2365240.png"
-                        alt="app-store-128x128-2365235"><span>Setting</span></div>
+                <div class="app"><img src="images/icons/apple-music-128x128-2365226.png"><span>Music</span></div>
+                <div class="app"><img src="images/icons/app-store-128x128-2365235.png"><span>Store</span></div>
+                <div class="app"><img src="images/icons/apple-tv-128x128-1575940.png"><span>Apple TV</span></div>
+                <div class="app"><img src="images/icons/books-128x128-2365234.png"><span>Books</span></div>
+                <div class="app"><img src="images/icons/calculator-128x128-1575939.png"><span>Calculator</span></div>
+                <div class="app"><img src="images/icons/calendar-128x128-2365233.png"><span>Calendar</span></div>
+                <div class="app"><img src="images/icons/camera-128x128-2365232.png"><span>Camera</span></div>
+                <div class="app"><img src="images/icons/clips-128x128-1575951.png"><span>Clips</span></div>
+                <div class="app"><img src="images/icons/clock-128x128-2365231.png"><span>Clock</span></div>
+                <div class="app"><img src="images/icons/facetime-128x128-1575950.png"><span>Facetime</span></div>
+                <div class="app"><img src="images/icons/files-128x128-2365229.png"><span>Files</span></div>
+                <div class="app"><img src="images/icons/find-my-128x128-1575949.png"><span>Find My</span></div>
+                <div class="app"><img src="images/icons/health-128x128-2365228.png"><span>Health</span></div>
+                <div class="app"><img src="images/icons/home-128x128-2365227.png"><span>Home</span></div>
+                <div class="app"><img src="images/icons/mail-128x128-2365225.png"><span>Mail</span></div>
+                <div class="app"><img src="images/icons/measure-128x128-1575947.png"><span>Measure</span></div>
+                <div class="app"><img src="images/icons/my-shortcuts-128x128-1575945.png"><span>Shortcuts</span></div>
+                <div class="app"><img src="images/icons/news-128x128-2365224.png"><span>News</span></div>
+                <div class="app"><img src="images/icons/notes-128x128-2365245.png"><span>Notes</span></div>
+                <div class="app"><img src="images/icons/podcasts-128x128-2365243.png"><span>Podcasts</span></div>
+                <div class="app"><img src="images/icons/reminders-128x128-2365242.png"><span>Reminders</span></div>
+                <div class="app"><img src="images/icons/settings-128x128-2365240.png"><span>Setting</span></div>
+                <div class="app"><img src="images/icons/stocks-128x128-2365239.png"><span>Stocks</span></div>
+                <div class="app"><img src="images/icons/translate-128x128-2365238.png"><span>Translate</span></div>
             </div>
             <div class="app-grid">
-                <div class="app"><img src="images/icons/app-store-128x128-2365235.png"
-                        alt="app-store-128x128-2365235"><span>App Store</span></div>
-                <div class="app"><img src="images/icons/apple-music-128x128-2365226.png"
-                        alt="app-store-128x128-2365235"><span>Music</span></div>
-                <div class="app"><img src="images/icons/books-128x128-2365234.png"
-                        alt="app-store-128x128-2365235"><span>App
-                        Books</span></div>
-                <div class="app"><img src="images/icons/calculator-128x128-1575939.png"
-                        alt="app-store-128x128-2365235"><span>Calculator</span></div>
-                <div class="app"><img src="images/icons/calendar-128x128-2365233.png"
-                        alt="app-store-128x128-2365235"><span>Calendar</span></div>
-                <div class="app"><img src="images/icons/camera-128x128-2365232.png"
-                        alt="app-store-128x128-2365235"><span>Camera</span></div>
-                <div class="app"><img src="images/icons/clock-128x128-2365231.png"
-                        alt="app-store-128x128-2365235"><span>App
-                        Clock</span></div>
-
-                <div class="app"><img src="images/icons/facetime-128x128-1575950.png"
-                        alt="app-store-128x128-2365235"><span>Facetime</span></div>
-                <div class="app"><img src="images/icons/files-128x128-2365229.png"
-                        alt="app-store-128x128-2365235"><span>App
-                        Files</span></div>
-                <div class="app"><img src="images/icons/find-my-128x128-1575949.png"
-                        alt="app-store-128x128-2365235"><span>Find My</span></div>
-                <div class="app"><img src="images/icons/health-128x128-2365228.png"
-                        alt="app-store-128x128-2365235"><span>Health</span></div>
-                <div class="app"><img src="images/icons/home-128x128-2365227.png"
-                        alt="app-store-128x128-2365235"><span>App
-                        Home</span></div>
-                <div class="app"><img src="images/icons/mail-128x128-2365225.png"
-                        alt="app-store-128x128-2365235"><span>Mail</span></div>
-                <div class="app"><img src="images/icons/news-128x128-2365224.png"
-                        alt="app-store-128x128-2365235"><span>News</span></div>
-                <div class="app"><img src="images/icons/notes-128x128-2365245.png"
-                        alt="app-store-128x128-2365235"><span>Notes</span></div>
-                <div class="app"><img src="images/icons/podcasts-128x128-2365243.png"
-                        alt="app-store-128x128-2365235"><span>Podcasts</span></div>
-                <div class="app"><img src="images/icons/reminders-128x128-2365242.png"
-                        alt="app-store-128x128-2365235"><span>Reminders</span></div>
-
-                <div class="app"><img src="images/icons/settings-128x128-2365240.png"
-                        alt="app-store-128x128-2365235"><span>Setting</span></div>
+                <div class="app"><img src="images/icons/voice-memos-128x128-1575942.png"><span>Voice Memos</span></div>
+                <div class="app"><img src="images/icons/wallet-128x128-2365237.png"><span>Wallet</span></div>
+                <div class="app"><img src="images/icons/weather-128x128-2365236.png"><span>Weather</span></div>
             </div>
         </div>
-
         <div class="dock">
-            <div class="app"><img src="images/icons/contacts-128x128-2365230.png" alt="app-store-128x128-2365235"></div>
-            <div class="app"><img src="images/icons/ios-message-128x128-1575946.png" alt="app-store-128x128-2365235">
-            </div>
-            <div class="app"><img src="images/icons/photos-128x128-2365244.png" alt="app-store-128x128-2365235"></div>
-            <div class="app"><img src="images/icons/safari-128x128-2365241.png" alt="app-store-128x128-2365235"></div>
+            <div class="app"><img src="images/icons/contacts-128x128-2365230.png"></div>
+            <div class="app"><img src="images/icons/ios-message-128x128-1575946.png"></div>
+            <div class="app"><img src="images/icons/photos-128x128-2365244.png"></div>
+            <div class="app"><img src="images/icons/safari-128x128-2365241.png"></div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
@@ -246,13 +201,11 @@
             var time = new Date();
             document.getElementById('time').innerHTML = time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
         }
-
         updateTime();
         $(document).ready(function () {
             time = setInterval(updateTime, 60000);
             console.log(true)
         })
-
     </script>
 </body>
 
