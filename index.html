@@ -254,6 +254,12 @@
             time = setInterval(updateTime, 60000);
             console.log(true)
         })
+        window.oncontextmenu = function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+            return false;
+        };
+
     </script>
 </body>
 
