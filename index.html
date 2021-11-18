@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <title>Document</title>
     <link rel="manifest" href="manifest.webmanifest">
     <style>
@@ -129,7 +129,7 @@
             width: 92vw;
             border-radius: 8vw;
             position: absolute;
-            bottom: 2vw;
+            bottom: 4vw;
             left: 2vw;
             background-color: rgba(255, 255, 255, 0.5);
             display: flex;
@@ -156,6 +156,21 @@
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
+        }
+
+        .bottom-bar {
+            height: 1.25vw;
+            width: 60%;
+            border-radius: 10vw;
+            position: absolute;
+            bottom: 1vw;
+            left: 20%;
+            background-color: rgba(255, 255, 255, 0.5);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 0;
+
         }
     </style>
 </head>
@@ -241,6 +256,7 @@
             <div class="app"><img src="images/icons/photos-128x128-2365244.png"></div>
             <div class="app"><img src="images/icons/safari-128x128-2365241.png"></div>
         </div>
+        <div class="bottom-bar"></div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
         integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
