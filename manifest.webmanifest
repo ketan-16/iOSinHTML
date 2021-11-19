@@ -7,30 +7,6 @@
     "orientation": "portrait",
     "icons": [
         {
-            "src": "/images/icons/pwa/android-launchericon-48-48.png",
-            "type": "image/png",
-            "sizes": "48x48",
-            "purpose": "any"
-        },
-        {
-            "src": "/images/icons/pwa/android-launchericon-72-72.png",
-            "type": "image/png",
-            "sizes": "72x72",
-            "purpose": "maskable"
-        },
-        {
-            "src": "/images/icons/pwa/android-launchericon-96-96.png",
-            "type": "image/png",
-            "sizes": "96x96",
-            "purpose": "maskable"
-        },
-        {
-            "src": "/images/icons/pwa/android-launchericon-144-144.png",
-            "type": "image/png",
-            "sizes": "144x144",
-            "purpose": "any"
-        },
-        {
             "src": "/images/icons/pwa/android-launchericon-192-192.png",
             "type": "image/png",
             "sizes": "192x192",
@@ -39,8 +15,7 @@
         {
             "src": "/images/icons/pwa/android-launchericon-512-512.png",
             "type": "image/png",
-            "sizes": "512x512",
-            "purpose": "maskable"
+            "sizes": "512x512"
         }
     ]
 }
